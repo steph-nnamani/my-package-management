@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if the script is run with root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script as root or with sudo."
+  exit 1
+fi
+
+# Update package lists
+apt update -y
+
+# Install Docker
+apt install docker.io -y
+
+# Enable and start Docker service
+systemctl enable docker
+systemctl start docker
+
+# Add the current user to the Docker group
+CURRENT_USER=$(whoami)
+usermod -aG docker $CURRENT_USER
+
+echo "Docker has been installed and the user $CURRENT_USER has been added to the Docker group."
+echo "Please log out and back in to apply the group membership."
