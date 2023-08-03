@@ -7,10 +7,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Update package lists
-apt update
+apt update -y
 
 # Install required packages
-apt install unzip postgresql openjdk-11-jre-headless
+apt install unzip postgresql openjdk-11-jre-headless -y
 
 # Set a predefined password for the "sonarqube" user
 SONARQUBE_PASSWORD="YourPasswordHere"
