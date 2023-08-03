@@ -97,5 +97,19 @@ kubeadm join 172.31.10.12:6443 --token cdm6fo.dhbrxyleqe5suy6e \
         --discovery-token-ca-cert-hash sha256:1fc51686afd16c46102c018acb71ef9537c1226e331840e7d401630b96298e7d
 ```
 
+FOR UBUNTU_SONARQUBE_DOCKER
+============================
+Install Docker: Add the necessary commands to install Docker on Ubuntu.
+
+Add the new user to the Docker group: Ensure the new user has permissions to run Docker commands without using sudo.
+Docker will be installed on Ubuntu, and the new user "sonarqube" will be added to the Docker group. After running this script, the user "sonarqube" should be able to run Docker commands without requiring sudo access. The script will also provide instructions for the user to log out and back in for the Docker group membership to take effect.
+
+JENKIN-DOCKER-ON-UBUNTU
+========================
+here's a separate script that will install Docker on an Ubuntu machine running Jenkins and add the Ubuntu user and Jenkins user to the Docker group:
+This script will install Docker, enable and start the Docker service, add the current user (Ubuntu user) to the Docker group, and also add the Jenkins user to the Docker group. This way, both Ubuntu and Jenkins users will have the necessary permissions to run Docker commands without using sudo.
+
+
+
 
 
