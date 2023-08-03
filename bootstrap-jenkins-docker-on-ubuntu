@@ -36,3 +36,5 @@ usermod -aG docker $JENKINS_USER
 
 echo "Jenkins has been installed."
 echo "Docker has been installed, and users $CURRENT_USER and $JENKINS_USER have been added to the Docker group."
+JENKINS_INITIAL_PASSWORD=$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword)
+echo "Jenkins Initial Admin Password: $JENKINS_INITIAL_PASSWORD"
